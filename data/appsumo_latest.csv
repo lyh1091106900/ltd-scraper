@@ -1,1 +1,6 @@
-
+name,price,category,link,scraped_at
+Mock SaaS Tool 0,$49,Productivity,https://appsumo.com/products/mock-0,2026-01-20T04:55:27.142642
+Mock SaaS Tool 1,$59,Productivity,https://appsumo.com/products/mock-1,2026-01-20T04:55:27.142655
+Mock SaaS Tool 2,$69,Productivity,https://appsumo.com/products/mock-2,2026-01-20T04:55:27.142657
+Mock SaaS Tool 3,$79,Productivity,https://appsumo.com/products/mock-3,2026-01-20T04:55:27.142659
+Mock SaaS Tool 4,$89,Productivity,https://appsumo.com/products/mock-4,2026-01-20T04:55:27.142661
