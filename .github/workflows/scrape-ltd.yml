@@ -29,18 +29,26 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      # Step 4: 运行爬虫
+      # Step 4: 运行爬虫（增强调试）
       - name: Run scraper
-        run: python appsumo_ld.py
+        run: |
+          python appsumo_ld.py
+          echo "=== 爬虫执行后，工作目录内容 ==="
+          ls -la
+          echo "=== data 目录是否存在 ==="
+          ls -la data/ || echo "data 目录不存在！"
 
-      # Step 5: 检查有无新数据
+      # Step 5: 检查有无新数据（绝对路径版）
       - name: Check for changes
         id: check_changes
         run: |
-          if [ -n "$(git status --porcelain data/)" ]; then
-            echo "has_changes=true" >> $GITHUB_OUTPUT
+          echo "当前工作目录：$(pwd)"
+          echo "检查 data 目录状态："
+          if [ -d "data" ]; then
+            echo "✓ data 目录存在"
+            ls -lh data/
           else
-            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "✗ data 目录不存在"
           fi
 
       # Step 6: 有新数据就提交
