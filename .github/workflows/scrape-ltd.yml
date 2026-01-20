@@ -31,12 +31,10 @@ jobs:
           python appsumo_ld.py 2>&1 | tee scrape.log
           echo "=== 日志文件内容 ==="
           cat scrape.log
-          echo "=== 截图文件 ==="
-          ls -la *.png || echo "无截图"
-          echo "=== HTML 文件 ==="
-          ls -la *.html || echo "无 HTML"
           echo "=== 工作目录结构 ==="
           ls -R
+          echo "=== 诊断文件 ==="
+          ls -la *.{png,html} 2>/dev/null || echo "无诊断文件"
 
       - name: Force commit
         run: |
