@@ -7,7 +7,6 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 print(f"工作目录已切换到: {os.getcwd()}")
 
 def scrape_appsumo():
-    # 关键修复：URL 必须干净
     url = 'https://appsumo.com/lifetime-deals/'
     print(f"正在请求: {url}")
     
@@ -18,7 +17,7 @@ def scrape_appsumo():
         print(f"请求成功，状态码: {resp.status_code}")
     except Exception as e:
         print(f"请求失败: {e}\n{traceback.format_exc()}", file=sys.stderr)
-        return []  # 返回空列表，但主函数会强制创建文件
+        return []
 
     soup = bs4.BeautifulSoup(resp.text, 'lxml')
     cards = soup.select('.deal-card')
@@ -51,7 +50,7 @@ def main():
     os.makedirs('data', exist_ok=True)
     print(f"data 目录已确认: {os.path.abspath('data')}")
     
-    # 抓取数据（可能为空）
+    # 抓取数据
     data = scrape_appsumo()
     
     # 强制创建 DataFrame（即使数据为空）
@@ -63,8 +62,8 @@ def main():
     dated_path = f'data/appsumo_{today}.csv'
     latest_path = 'data/appsumo_latest.csv'
     
-    df.to_csv(dated_path, index=False, encoding='utf-8')
-    df.to_csv(latest_path, index=False, encoding='utf-file)
+    df.to_csv(dated_path, index=False, encoding='utf-8')  # 这里修复了语法错误
+    df.to_csv(latest_path, index=False, encoding='utf-8') # 这里修复了语法错误
     
     print(f"文件已强制生成:")
     print(f"  - {dated_path} ({os.path.getsize(dated_path)} 字节)")
