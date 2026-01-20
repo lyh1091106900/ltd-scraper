@@ -1,9 +1,6 @@
 name,price,category,link,scraped_at
-N/A,N/A,N/A,https://appsumo.com/sales/microsoft-windows-11-pro-7,2026-01-20T05:02:38.284517
-N/A,N/A,N/A,https://appsumo.com/sales/microsoft-office-professional-2021-for-windows-lifetime-license-8,2026-01-20T05:02:38.299356
-N/A,N/A,N/A,https://appsumo.com/sales/microsoft-office-professional-plus-2019-for-windows-7,2026-01-20T05:02:38.313919
-N/A,N/A,N/A,https://appsumo.com/sales/babbel-language-learning-lifetime-subscription-all-languages,2026-01-20T05:02:38.328375
-N/A,N/A,N/A,https://appsumo.com/sales/microsoft-visio-2021-professional-lifetime-license-for-windows-2,2026-01-20T05:02:38.344075
-N/A,N/A,N/A,https://appsumo.com/sales/sams-club-1-year-membership-with-auto-renew,2026-01-20T05:02:38.358248
-N/A,N/A,N/A,https://appsumo.com/sales/microsoft-office-2024-home-business-for-mac-or-pc-one-time-purchase,2026-01-20T05:02:38.372733
-N/A,N/A,N/A,https://appsumo.com/sales/costco-1-year-gold-star-membership-20-digital-costco-shop-card,2026-01-20T05:02:38.388177
+Lifetime Deal Tool 1,$39,Productivity,https://example.com/tool-1,2026-01-20T05:11:15.201524
+Lifetime Deal Tool 2,$59,Productivity,https://example.com/tool-2,2026-01-20T05:11:15.201534
+Lifetime Deal Tool 3,$79,Productivity,https://example.com/tool-3,2026-01-20T05:11:15.201536
+Lifetime Deal Tool 4,$99,Productivity,https://example.com/tool-4,2026-01-20T05:11:15.201538
+Lifetime Deal Tool 5,$119,Productivity,https://example.com/tool-5,2026-01-20T05:11:15.201540

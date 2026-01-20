@@ -1,17 +1,39 @@
-data 目录已确认: /home/runner/work/ltd-scraper/ltd-scraper/data
-正在启动浏览器...
-正在访问: https://stacksocial.com/sales
-页面 DOM 加载完成
-✅ 页面截图已保存到 page_screenshot.png
-✅ 页面 HTML 已保存到 page_source.html
-选择器 '.deal-card' 超时
-选择器 '[data-testid='deal-card']' 超时
-选择器 'article' 找到 8 个元素
-成功解析 8 条数据
-✅ 文件已生成:
-  - data/appsumo_2026-01-20.csv (1004 字节)
-  - data/appsumo_latest.csv (1004 字节)
+[StackSocial] 请求失败: Redirect response '301 Moved Permanently' for url 'https://stacksocial.com/sales'
+Redirect location: 'https://www.stacksocial.com/sales'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
 
-data 目录内容:
-  - appsumo_2026-01-20.csv (1004 字节)
-  - appsumo_latest.csv (1004 字节)
+=== 开始多源抓取（2026-01-20） ===
+
+
+--- 尝试数据源: stacksocial ---
+[StackSocial] 正在请求: https://stacksocial.com/sales
+⚠️  stacksocial 返回空数据
+
+--- 尝试数据源: appsumo ---
+[AppSumo] 正在启动浏览器...
+[AppSumo] 正在访问: https://appsumo.com/lifetime-deals/
+[AppSumo] 选择器 '.deal-card' 超时
+[AppSumo] 选择器 '[class*='deal']' 超时
+[AppSumo] 选择器 '[class*='card']' 超时
+[AppSumo] 选择器 'article' 超时
+[AppSumo] 所有选择器都未找到元素
+📸 已保存诊断截图: appsumo_debug.png
+⚠️  appsumo 返回空数据
+
+--- 全部失败，使用模拟数据 ---
+⚠️  使用模拟数据
+
+=== 抓取完成 ===
+数据源: mock
+数据条数: 5
+有效列: ['name', 'price', 'link', 'scraped_at']
+
+数据预览:
+                   name  ...                  scraped_at
+0  Lifetime Deal Tool 1  ...  2026-01-20T05:11:15.201524
+1  Lifetime Deal Tool 2  ...  2026-01-20T05:11:15.201534
+2  Lifetime Deal Tool 3  ...  2026-01-20T05:11:15.201536
+3  Lifetime Deal Tool 4  ...  2026-01-20T05:11:15.201538
+4  Lifetime Deal Tool 5  ...  2026-01-20T05:11:15.201540
+
+[5 rows x 5 columns]
