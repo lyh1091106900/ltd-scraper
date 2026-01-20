@@ -1,0 +1,16 @@
+等待 deal-card 超时: Page.wait_for_selector: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator(".deal-card") to be visible
+
+data 目录已确认: /home/runner/work/ltd-scraper/ltd-scraper/data
+正在启动浏览器...
+正在访问: https://appsumo.com/lifetime-deals/
+页面加载完成
+DataFrame 形状: (0, 0)
+文件已强制生成:
+  - data/appsumo_2026-01-20.csv (1 字节)
+  - data/appsumo_latest.csv (1 字节)
+
+data 目录内容:
+  - appsumo_2026-01-20.csv (1 字节)
+  - appsumo_latest.csv (1 字节)
