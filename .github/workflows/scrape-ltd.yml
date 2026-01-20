@@ -2,73 +2,46 @@ name: Scrape Lifetime Deals
 
 on:
   schedule:
-    - cron: "0 8 * * *" # 每天 UTC 08:00 跑一次
-  workflow_dispatch: # 手动触发按钮
+    - cron: "0 8 * * *"
+  workflow_dispatch:
 
 jobs:
   scrape-and-commit:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: 拉代码
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GH_TOKEN }}
 
-      # Step 2: 装 Python
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      # Step 3: 装依赖
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      # Step 4: 运行爬虫（带调试）
+      # 确保 data 目录存在（双重保险）
+      - name: Pre-create data dir
+        run: mkdir -p data
+
       - name: Run scraper
         run: |
-          python appsumo_ld.py
-          echo "=== 爬虫执行后，工作目录内容 ==="
-          ls -la
-          echo "=== data 目录是否存在 ==="
-          ls -la data/ || echo "data 目录不存在！"
+          python appsumo_ld.py 2>&1 | tee scrape.log
+          echo "=== 日志文件内容 ==="
+          cat scrape.log
+          echo "=== 工作目录结构 ==="
+          ls -R
 
-      # Step 5: 检查文件
-      - name: Check for changes
-        id: check_changes
-        run: |
-          echo "当前工作目录：$(pwd)"
-          echo "检查 data 目录："
-          if [ -d "data" ]; then
-            echo "✓ data 目录存在"
-            ls -lh data/
-            echo "文件大小:"
-            du -h data/*
-          else
-            echo "✗ data 目录不存在"
-          fi
-
-          # 强制添加所有文件
-          git add .
-
-          if [ -n "$(git status --porcelain)" ]; then
-            echo "has_changes=true" >> $GITHUB_OUTPUT
-            echo "✓ 检测到文件变化"
-            git status --porcelain
-          else
-            echo "has_changes=false" >> $GITHUB_OUTPUT
-            echo "✗ 工作区干净，无变化"
-          fi
-
-      # Step 6: 提交并推送
-      - name: Commit and push
-        if: steps.check_changes.outputs.has_changes == 'true'
+      # 暴力提交：无论 git 状态如何都提交
+      - name: Force commit data
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git commit -m "chore: update LTD data on $(date +%Y-%m-%d) [skip ci]"
+          git add data/ -f  # -f 强制添加
+          git commit -m "chore: force update data [skip ci]" || echo "无变化可提交"
           git push
