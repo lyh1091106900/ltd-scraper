@@ -1,19 +1,17 @@
 data 目录已确认: /home/runner/work/ltd-scraper/ltd-scraper/data
 正在启动浏览器...
-正在访问: https://appsumo.com/lifetime-deals/
+正在访问: https://stacksocial.com/sales
 页面 DOM 加载完成
 ✅ 页面截图已保存到 page_screenshot.png
 ✅ 页面 HTML 已保存到 page_source.html
 选择器 '.deal-card' 超时
 选择器 '[data-testid='deal-card']' 超时
-选择器 'article' 超时
-选择器 '.product-card' 超时
-⚠️  所有选择器都未找到元素，可能网站结构已变化
-⚠️  生成模拟数据用于调试
+选择器 'article' 找到 8 个元素
+成功解析 8 条数据
 ✅ 文件已生成:
-  - data/appsumo_2026-01-20.csv (521 字节)
-  - data/appsumo_latest.csv (521 字节)
+  - data/appsumo_2026-01-20.csv (1004 字节)
+  - data/appsumo_latest.csv (1004 字节)
 
 data 目录内容:
-  - appsumo_2026-01-20.csv (521 字节)
-  - appsumo_latest.csv (521 字节)
+  - appsumo_2026-01-20.csv (1004 字节)
+  - appsumo_latest.csv (1004 字节)
