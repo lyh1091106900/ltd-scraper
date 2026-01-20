@@ -20,7 +20,7 @@ def scrape_appsumo():
         page = context.new_page()
         
         # 尝试访问并截图
-        url = "https://appsumo.com/lifetime-deals/"
+        url = "https://stacksocial.com/sales"
         print(f"正在访问: {url}")
         
         try:
