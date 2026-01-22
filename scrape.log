@@ -2,7 +2,7 @@
 Redirect location: 'https://www.stacksocial.com/sales'
 For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
 
-=== 开始多源抓取（2026-01-21） ===
+=== 开始多源抓取（2026-01-22） ===
 
 
 --- 尝试数据源: stacksocial ---
@@ -30,10 +30,10 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 
 数据预览:
                    name  ...                  scraped_at
-0  Lifetime Deal Tool 1  ...  2026-01-21T08:27:14.453424
-1  Lifetime Deal Tool 2  ...  2026-01-21T08:27:14.453434
-2  Lifetime Deal Tool 3  ...  2026-01-21T08:27:14.453436
-3  Lifetime Deal Tool 4  ...  2026-01-21T08:27:14.453439
-4  Lifetime Deal Tool 5  ...  2026-01-21T08:27:14.453441
+0  Lifetime Deal Tool 1  ...  2026-01-22T08:26:47.751310
+1  Lifetime Deal Tool 2  ...  2026-01-22T08:26:47.751320
+2  Lifetime Deal Tool 3  ...  2026-01-22T08:26:47.751322
+3  Lifetime Deal Tool 4  ...  2026-01-22T08:26:47.751324
+4  Lifetime Deal Tool 5  ...  2026-01-22T08:26:47.751326
 
 [5 rows x 5 columns]
